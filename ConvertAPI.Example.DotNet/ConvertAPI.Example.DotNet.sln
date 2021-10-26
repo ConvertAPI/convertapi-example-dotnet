@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncConversionWithPushNotification", "AsyncConversionWithPushNotification\AsyncConversionWithPushNotification.csproj", "{1F12A785-0C6D-425C-B7D2-019722B99BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertDocxToPdf", "ConvertDocxToPdf\ConvertDocxToPdf.csproj", "{A963F854-B5AF-4D6C-8632-752D8004BEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertUrlToPdf", "ConvertUrlToPdf\ConvertUrlToPdf.csproj", "{E17A29D0-76BD-4685-A7BF-2732F69CB480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertHtmlToPdf", "ConvertHtmlToPdf\ConvertHtmlToPdf.csproj", "{ECDE83CD-0371-471B-BE69-49D84BD381A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E17A29D0-76BD-4685-A7BF-2732F69CB480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E17A29D0-76BD-4685-A7BF-2732F69CB480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E17A29D0-76BD-4685-A7BF-2732F69CB480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E17A29D0-76BD-4685-A7BF-2732F69CB480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECDE83CD-0371-471B-BE69-49D84BD381A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECDE83CD-0371-471B-BE69-49D84BD381A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECDE83CD-0371-471B-BE69-49D84BD381A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECDE83CD-0371-471B-BE69-49D84BD381A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
