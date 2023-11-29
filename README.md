@@ -1,16 +1,12 @@
-# ConvertAPI DotNet library examples
+# ConvertAPI vanilla c# examples
 
-In this repository you can find multiple ConvertAPI usage examples with .NET v4.7:
+Here in this repository, you can find multiple examples of using ConvertAPI, all written in vanilla c#, without the use of any external libraries or frameworks. These examples include asynchronous conversion with push notification, conversion from MS Word (docx) file format to PDF, PDF generation from an HTML string, and URL to PDF conversion example.
+
+To run and debug these projects, please sign up for free at https://www.convertapi.com/a and retrieve your secret key. 
 
 - Asynchronous conversion with push notification examples
 - Conversion from MS Word (docx) file format to PDF
 - PDF generation from HTML string
 - Url to PDF conversion example
 
-To run and debug these projects please [sign up for free](https://www.convertapi.com/a) and retreive your secret key.
-
-To use ConvertAPI in your projects you can install it using NuGet: 
-
-`PM> Install-Package ConvertApi`
-
-For more information check [ConvertAPI website](https://www.convertapi.com/) and a [ConvertAPI .NET library](https://github.com/ConvertAPI/convertapi-dotnet).
+For more information, please visit the ConvertAPI website at https://www.convertapi.com/.
