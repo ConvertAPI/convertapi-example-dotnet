@@ -1,6 +1,6 @@
 # ConvertAPI vanilla c# examples
 
-Here in this repository, you can find multiple examples of using ConvertAPI, all written in vanilla c#, without the use of any external libraries or frameworks. These examples include asynchronous conversion with push notification, conversion from MS Word (docx) file format to PDF, PDF generation from an HTML string, and URL to PDF conversion example.
+Here in this repository, you can find multiple examples of using ConvertAPI, all written in vanilla c#, without the use of any external libraries or frameworks. 
 
 To run and debug these projects, please sign up for free at https://www.convertapi.com/a and retrieve your secret key. 
 
