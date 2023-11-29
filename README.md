@@ -9,4 +9,4 @@ To run and debug these projects, please sign up for free at https://www.converta
 - PDF generation from HTML string
 - Url to PDF conversion example
 
-For more information, please visit the ConvertAPI website at https://www.convertapi.com/.
+For more information, please visit the ConvertAPI website at https://www.convertapi.com.
