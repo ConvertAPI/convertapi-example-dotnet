@@ -1,38 +1,42 @@
-﻿using System;
-using System.IO;
-using System.Net;
+﻿var outputFile = Path.Combine(Directory.GetCurrentDirectory(), "output.pdf");
+const string secret = "";
 
-namespace ConvertUrlToPdf
-{
-    internal class Program
+if (string.IsNullOrEmpty(secret))
+    Console.WriteLine("The secret is missing, get one for free at https://www.convertapi.com/a/auth");
+else
+    try
     {
-        public static void Main (string[] args) {
-            const string fileToSave = "test.pdf";           
-            const string secret = "";
+        Console.WriteLine("Please wait, converting!");
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/octet-stream"));
+            
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("url", "https://www.convertapi.com"),
+                new KeyValuePair<string, string>("Footer", "<style>.right{float:right;}.left{float:left;}</style><span class='left'>page number <span class='pageNumber'></span></span><span class='right'>date <span class='date'></span></span>"),
+                new KeyValuePair<string, string>("CookieConsentBlock", "true"),
+            });
+            
+            var result = await client.PostAsync("https://v2.convertapi.com/web/to/pdf?Secret=" + secret, content);
 
-            if (string.IsNullOrEmpty(secret))
-                Console.WriteLine("The secret is missing, get one for free at https://www.convertapi.com/a");
+            if (result.IsSuccessStatusCode)
+            {
+                var resultFile = await result.Content.ReadAsByteArrayAsync();
+                await File.WriteAllBytesAsync(outputFile, resultFile);
+                Console.WriteLine("File converted successfully " + outputFile);
+            }
             else
-                try
-                {
-                    Console.WriteLine("Please wait, converting!");
-                    using (var client = new WebClient())
-                    {
-                        client.QueryString.Add("url", "http://example.com/");
-                        client.QueryString.Add("SetPageNo", "false");
-                        client.QueryString.Add("FooterTextLeft", "My custom footer");
-                        client.Headers.Add("accept", "application/octet-stream");
-                        var resultFile = client.UploadValues(new Uri("http://v2.convertapi.com/url/to/pdf?Secret=" + secret), "POST", client.QueryString); 
-                        File.WriteAllBytes(fileToSave, resultFile );
-                        Console.WriteLine("File converted successfully");
-                    }
-                }
-                catch (WebException e)
-                {
-                    Console.WriteLine("Status Code : {0}", ((HttpWebResponse)e.Response).StatusCode);
-                    Console.WriteLine("Status Description : {0}", ((HttpWebResponse)e.Response).StatusDescription);
-                    Console.WriteLine("Body : {0}", new StreamReader(e.Response.GetResponseStream()).ReadToEnd());
-                }
+            {
+                Console.WriteLine("Status Code : {0}", result.StatusCode);
+                Console.WriteLine("Reason Phrase : {0}", result.ReasonPhrase);
+                Console.WriteLine("Body : {0}", await result.Content.ReadAsStringAsync());
+            }
         }
     }
-}
+    catch (HttpRequestException e)
+    {
+        Console.WriteLine("Exception Caught!");
+        Console.WriteLine("Message : {0} ", e.Message);
+    }
