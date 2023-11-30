@@ -2,13 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncConversionWithPushNotification", "AsyncConversionWithPushNotification\AsyncConversionWithPushNotification.csproj", "{1F12A785-0C6D-425C-B7D2-019722B99BA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertDocxToPdf", "ConvertDocxToPdf\ConvertDocxToPdf.csproj", "{A963F854-B5AF-4D6C-8632-752D8004BEBF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncConversion", "AsyncConversion\AsyncConversion.csproj", "{4DE5BFEF-A694-40FA-A547-4177B4E87043}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertUrlToPdf", "ConvertUrlToPdf\ConvertUrlToPdf.csproj", "{E7303DBF-EAA5-42D8-A728-5F2897FD9D02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertHtmlToPdf", "ConvertHtmlToPdf\ConvertHtmlToPdf.csproj", "{7D2131BE-72C7-49FE-B9B7-4591C2ABEE7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertDocxToPdf", "ConvertDocxToPdf\ConvertDocxToPdf.csproj", "{067FC048-A07C-4C36-AC39-6A30135012DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,6 @@ Global
 		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F12A785-0C6D-425C-B7D2-019722B99BA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A963F854-B5AF-4D6C-8632-752D8004BEBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DE5BFEF-A694-40FA-A547-4177B4E87043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DE5BFEF-A694-40FA-A547-4177B4E87043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DE5BFEF-A694-40FA-A547-4177B4E87043}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,5 +32,9 @@ Global
 		{7D2131BE-72C7-49FE-B9B7-4591C2ABEE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D2131BE-72C7-49FE-B9B7-4591C2ABEE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D2131BE-72C7-49FE-B9B7-4591C2ABEE7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067FC048-A07C-4C36-AC39-6A30135012DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067FC048-A07C-4C36-AC39-6A30135012DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067FC048-A07C-4C36-AC39-6A30135012DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067FC048-A07C-4C36-AC39-6A30135012DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

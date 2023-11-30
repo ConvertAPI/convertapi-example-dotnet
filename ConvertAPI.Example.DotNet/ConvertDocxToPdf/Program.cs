@@ -1,36 +1,45 @@
-﻿using System;
-using System.IO;
-using System.Net;
+﻿const string secret = "";
+var inputFile = "word-spec-demo.docx";
+var outputFile = Path.Combine(Directory.GetCurrentDirectory(), "output.pdf");
 
-namespace ConvertDocxToPdf
+if (string.IsNullOrEmpty(secret))
+    Console.WriteLine("The secret is missing, get one for free at https://www.convertapi.com/a/auth");
+else
 {
-    internal class Program
+    try
     {
-        public static void Main (string[] args) {
-            const string fileToConvert = "test.docx";
-            const string fileToSave = "test.pdf";           
-            const string secret = "";
+        Console.WriteLine("Please wait, converting!");
 
-            if (string.IsNullOrEmpty(secret))
-                Console.WriteLine("The secret is missing, get one for free at https://www.convertapi.com/a");
-            else
-                try
+        await using var fileStream = File.OpenRead(inputFile);
+        var content = new MultipartFormDataContent
+        {
+            { new StreamContent(fileStream), "file", inputFile }
+        };
+
+        using (var httpClient = new HttpClient())
+        {
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/octet-stream"));
+
+            using (var resultFile = File.OpenWrite(outputFile))
+            {
+                var response = await httpClient.PostAsync($"https://v2.convertapi.com/convert/docx/to/pdf?secret={secret}", content);
+
+                if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine("Please wait, converting!");
-                    using (var client = new WebClient())
-                    {
-                        client.Headers.Add("accept", "application/octet-stream");
-                        var resultFile = client.UploadFile(new Uri("http://v2.convertapi.com/convert/docx/to/pdf?Secret=" + secret), fileToConvert); 
-                        File.WriteAllBytes(fileToSave, resultFile );
-                        Console.WriteLine("File converted successfully");
-                    }
+                    await response.Content.CopyToAsync(resultFile);
+                    Console.WriteLine("File converted successfully " + outputFile);
                 }
-                catch (WebException e)
+                else
                 {
-                    Console.WriteLine("Status Code : {0}", ((HttpWebResponse)e.Response).StatusCode);
-                    Console.WriteLine("Status Description : {0}", ((HttpWebResponse)e.Response).StatusDescription);
-                    Console.WriteLine("Body : {0}", new StreamReader(e.Response.GetResponseStream()).ReadToEnd());
+                    Console.WriteLine($"Status Code : {response.StatusCode}");
+                    Console.WriteLine($"Body : {await response.Content.ReadAsStringAsync()}");
                 }
+            }
         }
+    }
+    catch (HttpRequestException e)
+    {
+        Console.WriteLine("An error occurred: {0}", e.Message);
     }
 }
