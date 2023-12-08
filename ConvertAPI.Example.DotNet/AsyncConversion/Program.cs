@@ -8,7 +8,7 @@ const string secret = "";
 //You should set this property to True if you want the converted file to be saved to ConvertAPI's file storage.
 //Please note that the file will only be stored for a maximum of 3 hours, after which it will be automatically deleted.
 //However, you have the option to manually delete the file using HTTP Delete prior to the automatic deletion.
-const bool storeFile = true;
+const bool storeFile = false;
 
 const string inputFile = "SampleDOCFile_1000kb.docx";
 var outputFile = Path.Combine(Path.GetTempPath(), "output.pdf");
